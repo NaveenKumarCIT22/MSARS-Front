@@ -1,0 +1,46 @@
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 15vh 15vw;
+}
+
+.login-inner-wrapper {
+  width: 60vw;
+  /* height: 40vh; */
+  height: max-content;
+  background: linear-gradient(355deg, #418cd1, #9c41d1);
+  border-radius: 20px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.login-inputs {
+  width: 60%;
+  padding: 5%;
+  padding-top: 3%;
+  text-align: center;
+}
+
+.input-group {
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+#login-submit {
+  width: 50%;
+}
+
+.login-heading > h2 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0;
+}
