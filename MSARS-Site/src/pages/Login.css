@@ -6,7 +6,7 @@
 
 .login-inner-wrapper {
   width: 60vw;
-  /* height: 40vh; */
+  /* height: 40vh;  */
   height: max-content;
   background: linear-gradient(355deg, #418cd1, #9c41d1);
   border-radius: 20px;

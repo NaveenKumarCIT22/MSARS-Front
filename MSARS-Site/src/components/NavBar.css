@@ -27,6 +27,9 @@
 .nav-link {
   padding: 0 25px;
   cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .nav-brand {
@@ -42,6 +45,17 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
+}
+
+.nav-link.active {
+  background-color: rgb(231, 204, 49);
+  /* padding: 8px 25px; */
+  border-radius: 10px;
+  color: rgb(113, 106, 106);
+}
+
+.nav-link:hover {
+  background-color: rgba(241, 218, 85, 0.767);
 }
 
 @media (max-width: 760px) {

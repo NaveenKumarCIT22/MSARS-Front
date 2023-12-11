@@ -5,6 +5,7 @@ import { useState } from "react";
 import { NavBar } from "./components/NavBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,8 +14,10 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* {!usr ? <Home /> : <></>} */}
-      <Login />
+      <Routes>
+        <Route path="/" element={!usr ? <Home /> : <></>} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </>
   );
 }
