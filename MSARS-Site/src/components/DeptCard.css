@@ -1,0 +1,63 @@
+.pib-dept-card {
+  width: 90%;
+  margin: 5%;
+  height: 30%;
+  border-radius: 20px;
+  padding: 10px;
+  background: linear-gradient(355deg, #87acce, #debbf2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(25, 23, 23);
+}
+
+.pib-dept-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 90%;
+  width: 75%;
+  padding: 2.5%;
+}
+
+.pib-dept-card-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+  height: 90%;
+  justify-content: space-evenly;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.pib-dept-name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3em;
+}
+
+.pib-dept-rank {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.pib-dept-caption {
+  font-size: 0.6em;
+}
+
+.pib-dept-pos,
+.pib-dept-nut,
+.pib-dept-neg {
+  padding: 5%;
+}
+
+.pib-dept-pos-num,
+.pib-dept-nut-num,
+.pib-dept-neg-num {
+  font-size: 1.12em;
+}

@@ -8,15 +8,14 @@ const NewsCard = () => {
       <div className="pib-news-card">
         <div className="pib-news-card-left">
           <div className="pib-news-title">
-            <span id="pib-news-title">
-              Sample News Titlef aoewifo oiaf soidfian finfi nfein
-            </span>
+            <span id="pib-news-title">Sample News Title</span>
           </div>
           <div className="pib-news-dept">
-            <span id="pib-news-dept">
-              Some Department dlakdoi dknafd oiandifn osidnnisnf aiddfniso
-              oaisdf oasdfhaishiudsh siaskdfiasdfnaidhf
-            </span>
+            <a href="" className="news-source-link">
+              <span id="pib-news-source">The Hindu</span>
+            </a>
+            {" - "}
+            <span className="news-dept-name">Some Department</span>
           </div>
         </div>
         <div className="pib-news-card-right">

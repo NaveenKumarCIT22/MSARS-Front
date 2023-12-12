@@ -8,30 +8,33 @@ const DeptCard = () => {
       <div className="pib-dept-card">
         <div className="pib-dept-card-left">
           <div className="pib-dept-name">
-            <span id="pib-dept-name"></span>
+            <span id="pib-dept-name">Some Department</span>
           </div>
           <div className="pib-dept-rank">
-            Rank: # <span id="pib-dept-rank"></span>
+            Rank:{" "}
+            <span style={{ color: "#d4b40a", textShadow: "2px 2px grey" }}>
+              #<span id="pib-dept-rank">5</span>
+            </span>
           </div>
         </div>
         <div className="pib-dept-card-right">
-          <div className="pib-dept-pos">
+          <div className="pib-dept-pos pos-elem">
             <div className="pib-dept-pos-num">
-              <span id="pib-dept-pos-num"></span>%
+              <span id="pib-dept-pos-num">25</span>%
             </div>
-            <div className="pib-dept-pos-caption">+ ve</div>
+            <div className="pib-dept-caption">+ ve</div>
           </div>
-          <div className="pib-dept-nut">
+          <div className="pib-dept-nut nut-elem">
             <div className="pib-dept-nut-num">
-              <span id="pib-dept-nut-num"></span>%
+              <span id="pib-dept-nut-num">50</span>%
             </div>
-            <div className="pib-dept-nut-caption">o al</div>
+            <div className="pib-dept-caption">o al</div>
           </div>
-          <div className="pib-dept-neg">
+          <div className="pib-dept-neg neg-elem">
             <div className="pib-dept-neg-num">
-              <span id="pib-dept-neg-num"></span>%
+              <span id="pib-dept-neg-num">25</span>%
             </div>
-            <div className="pib-dept-neg-caption">- ve</div>
+            <div className="pib-dept-caption">- ve</div>
           </div>
         </div>
       </div>

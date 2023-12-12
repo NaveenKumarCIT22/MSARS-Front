@@ -1,4 +1,6 @@
 import React from "react";
+import NewsCard from "../components/NewsCard";
+import DeptCard from "../components/DeptCard";
 
 const PIB_Dashboard = () => {
   return (
@@ -18,8 +20,12 @@ const PIB_Dashboard = () => {
             <div className="pib-search-wrapper">
               <div className="pib-search"></div>
             </div>
-            <div className="pib-tab-news"></div>
-            <div className="pib-tab-department"></div>
+            <div className="pib-tab-news">
+              <NewsCard />
+            </div>
+            <div className="pib-tab-department">
+              <DeptCard />
+            </div>
           </div>
         </div>
         <div className="dash-right"></div>
