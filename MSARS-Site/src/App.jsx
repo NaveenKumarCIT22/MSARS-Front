@@ -1,11 +1,12 @@
 import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
-// import "./App.css";
+import "./App.css";
 import { NavBar } from "./components/NavBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { Routes, Route } from "react-router-dom";
+import NewsCard from "./components/NewsCard";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={!usr ? <Home /> : <></>} />
         <Route path="/login" element={<Login />} />
+        <Route path="/newscardtest" element={<NewsCard />} />
       </Routes>
     </>
   );
