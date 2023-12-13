@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import NewsCard from "./components/NewsCard";
 import PIB_Dashboard from "./pages/PIB_Dashboard";
 import DeptCard from "./components/DeptCard";
+import ProgressCard from "./components/ProgressCard";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +24,12 @@ function App() {
         <Route path="/pib/dashboard" element={<PIB_Dashboard />} />
         <Route path="/newscardtest" element={<NewsCard />} />
         <Route path="/deptcardtest" element={<DeptCard />} />
+        <Route
+          path="/progresstest"
+          element={
+            <ProgressCard percentage={50} strokeWidth={"5"} size={"50px"} />
+          }
+        />
       </Routes>
     </>
   );

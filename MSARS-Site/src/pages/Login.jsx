@@ -1,15 +1,22 @@
 import React, { useRef, useState } from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [usrname, setUsrname] = useState("");
-  const [passwrd, setPasswrd] = useState("");
+  // const [usrname, setUsrname] = useState("");
+  // const [passwrd, setPasswrd] = useState("");
   const usrnameRef = useRef("");
   const passwrdRef = useRef("");
-
+  const navigate = useNavigate();
   const handleLoginClick = () => {
     console.log("username:", usrnameRef.current.value);
     console.log("password:", passwrdRef.current.value);
+    if (
+      usrnameRef.current.value === "admin" &&
+      passwrdRef.current.value === "pass"
+    ) {
+      navigate("/pib/dashboard");
+    }
   };
 
   return (

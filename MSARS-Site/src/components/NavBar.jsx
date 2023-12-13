@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 export function NavBar() {
-  const usr = sessionStorage.getItem("MSARS_ActiveUsr");
-  // const usr = "Admin";
+  // const usr = sessionStorage.getItem("MSARS_ActiveUsr");
+  const usr = "Admin";
   console.log(usr);
   const [isOpen, setIsOpen] = useState(false);
   const [isShort, setIsShort] = useState(false);
@@ -95,7 +95,7 @@ export function NavBar() {
     );
   } else {
     // const role = sessionStorage.getItem("MSARS_ActiveUsrRole");
-    const role = "dept";
+    const role = "pib";
     if (role == "pib") {
       return (
         <div className="nav-wrapper">

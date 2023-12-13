@@ -12,7 +12,7 @@ const DeptCard = () => {
           </div>
           <div className="pib-dept-rank">
             Rank:{" "}
-            <span style={{ color: "#d4b40a", textShadow: "2px 2px grey" }}>
+            <span className="golden-rank">
               #<span id="pib-dept-rank">5</span>
             </span>
           </div>
@@ -28,7 +28,7 @@ const DeptCard = () => {
             <div className="pib-dept-nut-num">
               <span id="pib-dept-nut-num">50</span>%
             </div>
-            <div className="pib-dept-caption">o al</div>
+            <div className="pib-dept-caption">N</div>
           </div>
           <div className="pib-dept-neg neg-elem">
             <div className="pib-dept-neg-num">

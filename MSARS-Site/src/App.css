@@ -30,6 +30,11 @@
   color: rgb(187, 17, 17);
 }
 
+.golden-rank {
+  color: #d4b40a;
+  text-shadow: 2px 2px grey;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
