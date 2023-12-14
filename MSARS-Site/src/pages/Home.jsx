@@ -1,9 +1,12 @@
 import React from "react";
 import "./Home.css";
+import { NavBar } from "../components/NavBar";
 
 const Home = () => {
   return (
     <>
+      <NavBar />
+
       <div className="home-wrapper">
         <div className="title-container">
           <div className="title-expansion">Media</div>

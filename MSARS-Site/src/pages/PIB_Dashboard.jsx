@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NewsCard from "../components/NewsCard";
 import DeptCard from "../components/DeptCard";
 import "./PIB_Dashboard.css";
@@ -6,8 +6,20 @@ import SearchBar from "../components/SearchBar";
 import LowDeptCard from "../components/LowDeptCard";
 import TopDeptCard from "../components/TopDeptCard";
 import ProgressCard from "../components/ProgressCard";
+import { NavBar } from "../components/NavBar";
+import { useNavigate } from "react-router-dom";
 
 const PIB_Dashboard = () => {
+  const usr = sessionStorage.getItem("MSARS_ActiveUsr");
+  console.log("..=>", usr);
+  const navigate = useNavigate();
+  // useEffect(() => {
+  if (usr == null) {
+    window.alert("Please login!!!");
+    return navigate("/login");
+  }
+  // return navigate("/login");
+  // }, []);
   const [tab, setTab] = useState("news");
   const gold = "rgba(255, 217, 0, 0.749)";
   const tabActiveStyle = {
@@ -15,6 +27,8 @@ const PIB_Dashboard = () => {
   };
   return (
     <>
+      <NavBar />
+
       <div className="pib-dash-wrapper">
         <div className="dash-left">
           <div className="pib-progress-wrapper">

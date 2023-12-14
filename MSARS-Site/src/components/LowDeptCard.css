@@ -6,7 +6,8 @@
   flex-direction: column;
   background: linear-gradient(355deg, #418cd1, #9c41d1);
   border-radius: 20px;
-  min-height: 70%;
+  /* min-height: 70%; */
+  height: 90%;
   padding: 20px;
 }
 
@@ -25,4 +26,9 @@
 
 .low-dept {
   font-size: 25px;
+}
+
+.low-dept-pane > img {
+  margin-top: 10px;
+  width: 100%;
 }

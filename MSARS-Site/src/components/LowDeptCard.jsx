@@ -1,22 +1,13 @@
 import React from "react";
 import "./LowDeptCard.css";
+import chart from "../assets/chart.png";
 
 const LowDeptCard = () => {
   // let
   return (
     <div className="low-dept-pane">
-      <span id="low-dept-heading">Poor Departments</span>
-      <span className="low-depts">
-        <div className="low-dept">
-          <span className="golden-rank">
-            #-
-            <span id="span" className="low-dept-rank">
-              1
-            </span>{" "}
-          </span>
-          <span className="deptarment-name">Electricity</span>
-        </div>
-      </span>
+      <span id="low-dept-heading">Overview for Past 30 days</span>
+      <img src={chart} alt="chart" />
     </div>
   );
 };

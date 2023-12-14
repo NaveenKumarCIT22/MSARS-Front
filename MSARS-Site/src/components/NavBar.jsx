@@ -1,11 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import notification_logo from "../assets/bell-solid.svg";
 import "./NavBar.css";
 
 export function NavBar() {
-  // const usr = sessionStorage.getItem("MSARS_ActiveUsr");
-  const usr = "Admin";
-  console.log(usr);
+  let usr = sessionStorage.getItem("MSARS_ActiveUsr");
+  useEffect(() => {
+    usr = sessionStorage.getItem("MSARS_ActiveUsr");
+  }, [sessionStorage.getItem("MSARS_ActiveUsr")]);
+  // const usr = "Admin";
+  // console.log(usr);
   const [isOpen, setIsOpen] = useState(false);
   const [isShort, setIsShort] = useState(false);
   const hamburgerMenuRef = useRef(null);
@@ -45,6 +49,7 @@ export function NavBar() {
     } else {
       setIsShort(false);
     }
+    console.log(usr);
     window.addEventListener("resize", handleWindowResize);
     return () => {
       window.removeEventListener("resize", handleWindowResize);
@@ -62,9 +67,9 @@ export function NavBar() {
               <NavLink className="nav-link" to="/">
                 Home
               </NavLink>
-              <NavLink className="nav-link" to="/rankings">
+              {/* <NavLink className="nav-link" to="/rankings">
                 Rankings
-              </NavLink>
+              </NavLink> */}
               <NavLink className="nav-link" to="/login">
                 Login
               </NavLink>
@@ -72,9 +77,9 @@ export function NavBar() {
           ) : (
             isOpen && (
               <div className="nav-right">
-                <NavLink className="nav-link" to="/ranking">
+                {/* <NavLink className="nav-link" to="/ranking">
                   Rankings
-                </NavLink>
+                </NavLink> */}
                 <NavLink className="nav-link" to="/login">
                   Login
                 </NavLink>
@@ -106,13 +111,16 @@ export function NavBar() {
             </div>
             {!isShort ? (
               <div className="nav-right">
-                <NavLink className="nav-link" to="/dashboard">
+                <NavLink className="nav-link" to="/pib/notificaitons">
+                  <img src={notification_logo} alt="notify" />
+                </NavLink>
+                <NavLink className="nav-link" to="/pib/dashboard">
                   Dashboard
                 </NavLink>
-                <NavLink className="nav-link" to="/sources">
+                <NavLink className="nav-link" to="/pib/sources">
                   Sources
                 </NavLink>
-                <NavLink className="nav-link" to="profile">
+                <NavLink className="nav-link" to="/login">
                   {usr}
                 </NavLink>
               </div>
@@ -125,9 +133,7 @@ export function NavBar() {
                   <NavLink className="nav-link" to="sources">
                     Sources
                   </NavLink>
-                  <NavLink className="nav-link" to="profile">
-                    {usr}
-                  </NavLink>
+                  <NavLink className="nav-link">{usr}</NavLink>
                 </div>
               )
             )}

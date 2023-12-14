@@ -10,6 +10,8 @@ import NewsCard from "./components/NewsCard";
 import PIB_Dashboard from "./pages/PIB_Dashboard";
 import DeptCard from "./components/DeptCard";
 import ProgressCard from "./components/ProgressCard";
+import ChatWidget from "./components/ChatWidget";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +19,7 @@ function App() {
   console.log("usr:", usr);
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={!usr ? <Home /> : <></>} />
         <Route path="/login" element={<Login />} />
@@ -30,7 +32,9 @@ function App() {
             <ProgressCard percentage={50} strokeWidth={"5"} size={"50px"} />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      <ChatWidget />
     </>
   );
 }

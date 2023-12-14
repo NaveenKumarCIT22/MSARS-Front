@@ -1,0 +1,23 @@
+.not-found-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-found {
+  width: 80%;
+  text-align: center;
+}
+
+.heading404 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.description404 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
