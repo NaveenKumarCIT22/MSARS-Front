@@ -12,6 +12,7 @@ import DeptCard from "./components/DeptCard";
 import ProgressCard from "./components/ProgressCard";
 import ChatWidget from "./components/ChatWidget";
 import NotFound from "./pages/NotFound";
+import Sources from "./pages/Sources";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/pib/dashboard" element={<PIB_Dashboard />} />
         <Route path="/newscardtest" element={<NewsCard />} />
         <Route path="/deptcardtest" element={<DeptCard />} />
+        <Route path="/pib/sources" element={<Sources />} />
         <Route
           path="/progresstest"
           element={
