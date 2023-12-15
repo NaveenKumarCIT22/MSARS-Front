@@ -14,6 +14,7 @@ import ChatWidget from "./components/ChatWidget";
 import NotFound from "./pages/NotFound";
 import Sources from "./pages/Sources";
 import ProgressChart from "./components/ProgressChart";
+import NewsModal from "./pages/NewsModal";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/deptcardtest" element={<DeptCard />} />
         <Route path="/pib/sources" element={<Sources />} />
         <Route path="/linecharttest" element={<ProgressChart />} />
+        <Route path="/pib/news/detailed" element={<NewsModal />} />
         <Route
           path="/progresstest"
           element={

@@ -55,13 +55,13 @@ const ChatWidget = () => {
           </div>
         </div>
       )}
-      <div className="chat-bubble-wrapper">
-        <div className="chat-bubble" onClick={toggleChatState}>
-          <div className="chat-icon">
-            <img src={chatWidget} alt="chat widget" />
-          </div>
+      {/* <div className="chat-bubble-wrapper"> */}
+      <div className="chat-bubble" onClick={toggleChatState}>
+        <div className="chat-icon">
+          <img src={chatWidget} alt="chat widget" />
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };

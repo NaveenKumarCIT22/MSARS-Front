@@ -49,13 +49,47 @@ const ProgressChart = () => {
   };
   // Chart options
   const options = {
+    responsive: true,
+    // events: ["click"],
+    // events: ["mousemove", "mouseout", "click", "touchstart", "touchmove"],
+    // interaction: {
+    //   mode: "nearest",
+    // },
     plugins: {
-      responsive: true,
+      //   labels: {
+      //     color: "white",
+      //   },
+      tooltip: {
+        enabled: true,
+        usePointStyle: true,
+        titleAlign: "center",
+        titleColor: "gold",
+        titleSpacing: 3,
+        TitleFont: {
+          weight: "bold",
+        },
+        backgroundColor: "midnightblue",
+        bodyColor: "orange",
+        bodyAlign: "center",
+        bodyFont: {
+          weight: "italic",
+        },
+        callbacks: {
+          labelPointStyle: function (context) {
+            return {
+              pointStyle: "circle",
+              rotation: 0,
+            };
+          },
+        },
+      },
       title: {
         display: true,
         text: "Overview of Past 30 Days",
         fontSize: 100,
         align: "center",
+        color: "white",
+
         font: {
           weight: "bold",
         },
@@ -64,18 +98,38 @@ const ProgressChart = () => {
       },
       legend: {
         display: true,
-        position: "right",
+        position: "bottom",
+        labels: {
+          color: "white",
+        },
+        fullSize: true,
+        align: "start",
       },
     },
     scales: {
       y: {
-        beginAtZero: true,
+        ticks: { color: "white", beginAtZero: true },
+      },
+      x: {
+        ticks: { color: "white", beginAtZero: true },
       },
     },
   };
   return (
-    <div className="progress-chart" style={{ width: "70%" }}>
-      <Line data={data} options={options} />
+    <div
+      className="progress-chart"
+      style={{
+        width: "90%",
+        height: "90%",
+        display: "flex",
+        placeItems: "center",
+      }}
+    >
+      <Line
+        data={data}
+        options={options}
+        style={{ width: "100%", height: "100%" }}
+      />
     </div>
   );
 };

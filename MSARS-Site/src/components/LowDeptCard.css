@@ -1,8 +1,8 @@
 .low-dept-pane {
   width: 90%;
   display: flex;
-  align-items: start;
-  justify-content: start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: rgba(0, 140, 255, 0.282);
   /* background: linear-gradient(355deg, #418cd1, #9c41d1); */
