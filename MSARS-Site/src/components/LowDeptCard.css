@@ -4,7 +4,8 @@
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  background: linear-gradient(355deg, #418cd1, #9c41d1);
+  background-color: rgba(0, 140, 255, 0.282);
+  /* background: linear-gradient(355deg, #418cd1, #9c41d1); */
   border-radius: 20px;
   /* min-height: 70%; */
   height: 90%;

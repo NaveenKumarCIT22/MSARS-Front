@@ -21,7 +21,7 @@ const PIB_Dashboard = () => {
   // return navigate("/login");
   // }, []);
   const [tab, setTab] = useState("news");
-  const gold = "rgba(255, 217, 0, 0.749)";
+  const gold = "rgba(0, 255, 255, 0.553)";
   const tabActiveStyle = {
     backgroundColor: "gold",
   };

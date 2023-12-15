@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Sources.css";
 import { NavBar } from "../components/NavBar";
 
 const Sources = () => {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("web");
+  const singleInpRef = useRef();
   const datalst = [
     {
       link: "test.news.com/sample_news",
@@ -33,6 +34,7 @@ const Sources = () => {
   const deleteRecord = (uid) => {
     console.log(uid);
   };
+  const addRecord = (link) => {};
   return (
     <>
       <NavBar />
@@ -90,8 +92,13 @@ const Sources = () => {
                   type="url"
                   name="url-data-input"
                   id="single-data-input"
+                  ref={singleInpRef}
                 />
-                <input type="button" value="Add" />
+                <input
+                  type="button"
+                  value="Add"
+                  onClick={() => addRecord(singleInpRef.current.value)}
+                />
               </div>
               <div className="data-batch-insert">
                 <input

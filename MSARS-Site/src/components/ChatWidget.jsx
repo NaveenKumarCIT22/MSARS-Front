@@ -9,17 +9,17 @@ const ChatWidget = () => {
   const appendUsrChat = (newChat) => {
     let obj = {
       role: "usr",
-      msg: newChat,
+      msg: newChat.value,
     };
-    setChatArr(...chatArr, obj);
-    console.log("chatArr", chatArr);
+    setChatArr(() => [...chatArr, obj]);
+    newChat.value = "";
   };
   const appendBotChat = (newChat) => {
     let obj = {
       role: "bot",
       msg: newChat,
     };
-    setChatArr(...chatArr, obj);
+    setChatArr(() => [...chatArr, obj]);
   };
   const toggleChatState = () => {
     setChatSate(!chatState);
@@ -32,8 +32,10 @@ const ChatWidget = () => {
           <div className="chat-panel">
             {chatArr.map((ele) => {
               return (
-                <div className={ele.role == "usr" ? "usr-chat" : "bot-chat"}>
-                  {ele.msg}
+                <div className="chat-wrapper">
+                  <div className={ele.role == "usr" ? "usr-chat" : "bot-chat"}>
+                    {ele.msg}
+                  </div>
                 </div>
               );
             })}
@@ -48,7 +50,7 @@ const ChatWidget = () => {
             <input
               type="button"
               value="Send"
-              onClick={() => appendUsrChat(chatInputRef.current.value)}
+              onClick={() => appendUsrChat(chatInputRef.current)}
             />
           </div>
         </div>

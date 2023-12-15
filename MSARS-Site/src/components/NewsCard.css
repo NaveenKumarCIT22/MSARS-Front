@@ -5,7 +5,7 @@
   height: fit-content;
   border-radius: 20px;
   padding: 5px;
-  background: linear-gradient(355deg, #87acce, #debbf2);
+  background: linear-gradient(355deg, #87acce, rgb(94, 174, 239));
   display: flex;
   flex-direction: row;
   align-items: center;

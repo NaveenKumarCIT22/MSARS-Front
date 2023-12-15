@@ -32,7 +32,7 @@ const ProgressCard = ({
             <circle
               cx={circleWidth / 2}
               cy={circleWidth / 2}
-              strokeWidth={"12px"}
+              strokeWidth={"8px"}
               r={radius}
               className="circle-progress"
               style={{

@@ -2,7 +2,7 @@ import React from "react";
 import "./TopDeptCard.css";
 
 const TopDeptCard = () => {
-  const goodDepts = [
+  const poorDepts = [
     {
       rank: 1,
       name: "Education",
@@ -20,7 +20,7 @@ const TopDeptCard = () => {
     <div className="top-dept-pane">
       <span id="top-dept-heading">Under Performing Departments</span>
       <span className="top-depts">
-        {goodDepts.map((ele) => {
+        {poorDepts.map((ele) => {
           return (
             <div className="top-dept" key={crypto.randomUUID()}>
               <span className="golden-rank">

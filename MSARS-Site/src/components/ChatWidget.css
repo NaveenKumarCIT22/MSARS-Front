@@ -60,6 +60,11 @@
   border-radius: 20px;
   padding: 20px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: start;
 }
 
 .chat-input-area {
@@ -75,4 +80,35 @@
 
 #chat-input {
   width: 70%;
+}
+
+.chat-input-area > input {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.chat-wrapper {
+  width: 100%;
+}
+
+.usr-chat {
+  padding: 8px;
+  border-radius: 8px;
+  min-width: 30px;
+  max-width: 170px;
+  float: right;
+  background-color: rgba(0, 255, 255, 0.556);
+  white-space: wrap;
+  word-wrap: break-word;
+}
+
+.bot-chat {
+  padding: 8px;
+  border-radius: 8px;
+  min-width: 30px;
+  max-width: 170px;
+  float: left;
+  background-color: rgba(29, 115, 115, 0.748);
+  white-space: wrap;
+  word-wrap: break-word;
 }
