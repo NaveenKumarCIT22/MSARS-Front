@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import notification_logo from "../assets/bell-solid.svg";
 import "./NavBar.css";
+import Notification from "../pages/Notification";
 
 export function NavBar() {
   let usr = sessionStorage.getItem("MSARS_ActiveUsr");
@@ -100,6 +101,7 @@ export function NavBar() {
     );
   } else {
     // const role = sessionStorage.getItem("MSARS_ActiveUsrRole");
+    const [show, setShow] = useState(false);
     const role = "pib";
     if (role == "pib") {
       return (
@@ -111,8 +113,16 @@ export function NavBar() {
             </div>
             {!isShort ? (
               <div className="nav-right">
-                <NavLink className="nav-link" to="/pib/notificaitons">
-                  <img src={notification_logo} alt="notify" />
+                {show && <Notification />}
+                <NavLink
+                  className="nav-link"
+                  onClick={() => setShow(() => !show)}
+                >
+                  <img
+                    src={notification_logo}
+                    alt="notify"
+                    // onClick={() => setShow(() => !show)}
+                  />
                 </NavLink>
                 <NavLink className="nav-link" to="/pib/dashboard">
                   Dashboard
@@ -127,13 +137,18 @@ export function NavBar() {
             ) : (
               isOpen && (
                 <div className="nav-right">
-                  <NavLink className="nav-link" to="dashboard">
+                  <NavLink className="nav-link" to="/pib/notificaitons">
+                    <img src={notification_logo} alt="notify" />
+                  </NavLink>
+                  <NavLink className="nav-link" to="/pib/dashboard">
                     Dashboard
                   </NavLink>
-                  <NavLink className="nav-link" to="sources">
+                  <NavLink className="nav-link" to="/pib/sources">
                     Sources
                   </NavLink>
-                  <NavLink className="nav-link">{usr}</NavLink>
+                  <NavLink className="nav-link" to="/login">
+                    {usr}
+                  </NavLink>
                 </div>
               )
             )}

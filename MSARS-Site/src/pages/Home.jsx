@@ -9,11 +9,23 @@ const Home = () => {
 
       <div className="home-wrapper">
         <div className="title-container">
-          <div className="title-expansion">Media</div>
-          <div className="title-expansion">Sentiment</div>
-          <div className="title-expansion">Analysis</div>
-          <div className="title-expansion">Reporting</div>
-          <div className="title-expansion">System</div>
+          <div className="title-inner-container">
+            <div className="title-expansion">
+              <span className="emph">M</span>edia
+            </div>
+            <div className="title-expansion">
+              <span className="emph">S</span>entiment
+            </div>
+            <div className="title-expansion">
+              <span className="emph">A</span>nalysis
+            </div>
+            <div className="title-expansion">
+              <span className="emph">R</span>eporting
+            </div>
+            <div className="title-expansion">
+              <span className="emph">S</span>ystem
+            </div>
+          </div>
         </div>
         <div className="team-container">
           <h2>

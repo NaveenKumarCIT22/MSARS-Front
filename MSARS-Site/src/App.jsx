@@ -15,6 +15,8 @@ import NotFound from "./pages/NotFound";
 import Sources from "./pages/Sources";
 import ProgressChart from "./components/ProgressChart";
 import NewsModal from "./pages/NewsModal";
+import DeptModal from "./pages/DeptModal";
+import DeptNewsModal from "./pages/DeptNewsModal";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +34,9 @@ function App() {
         <Route path="/pib/sources" element={<Sources />} />
         <Route path="/linecharttest" element={<ProgressChart />} />
         <Route path="/pib/news/detailed" element={<NewsModal />} />
+        <Route path="/dept/news/detailed" element={<DeptNewsModal />} />
+        <Route path="/dept/detailed" element={<DeptModal />} />
+
         <Route
           path="/progresstest"
           element={

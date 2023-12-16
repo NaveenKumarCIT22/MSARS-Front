@@ -1,11 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "./DeptCard.css";
 
 import React from "react";
 
 const DeptCard = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="pib-dept-card">
+      <div
+        className="pib-dept-card"
+        onClick={() => {
+          navigate("/dept/detailed");
+        }}
+      >
         <div className="pib-dept-card-left">
           <div className="pib-dept-name">
             <span id="pib-dept-name">Some Department</span>

@@ -23,7 +23,7 @@ ChartJS.register(
 // Sample data for 3 variables over 30 days
 
 // LineChart component
-const ProgressChart = () => {
+const DeptProgressChart = () => {
   const data = {
     labels: Array.from({ length: 7 }, (_, i) => `Day ${i + 1}`),
     datasets: [
@@ -134,4 +134,4 @@ const ProgressChart = () => {
   );
 };
 
-export default ProgressChart;
+export default DeptProgressChart;
