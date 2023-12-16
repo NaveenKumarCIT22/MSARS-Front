@@ -64,3 +64,13 @@
 .pib-dept-neg-num {
   font-size: 20px;
 }
+
+.pib-tab-inner-wrapper {
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 40%;
+}

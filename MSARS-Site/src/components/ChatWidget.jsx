@@ -1,25 +1,47 @@
 import React, { useRef, useState } from "react";
 import "./ChatWidget.css";
 import chatWidget from "../assets/robot.svg";
+import axios from "axios";
 
 const ChatWidget = () => {
   const chatInputRef = useRef();
   const [chatState, setChatSate] = useState(false);
   const [chatArr, setChatArr] = useState([]);
-  const appendUsrChat = (newChat) => {
-    let obj = {
+  // const chatArr = [];
+
+  // function setChatArr(obj) {
+  //   chatArr.push(obj());
+  // }
+
+  const appendUsrChat = async (newChat) => {
+    const uobj = {
       role: "usr",
       msg: newChat.value,
     };
-    setChatArr(() => [...chatArr, obj]);
+    setChatArr((prev) => {
+      console.log("inside");
+      return [...prev, uobj];
+    });
+    // setChatArr(() => {
+    //   console.log("inside");
+    //   return chatArr.push(uobj);
+    // });
+    console.log("prior", chatArr);
+    let res = await axios.post("/api/chat", { prompt: newChat.value });
+    // console.log("res.data", res.data);
+    console.log("before", chatArr);
+    appendBotChat(res.data.message);
+    console.log("after", chatArr);
     newChat.value = "";
   };
+
   const appendBotChat = (newChat) => {
-    let obj = {
+    const bobj = {
       role: "bot",
       msg: newChat,
     };
-    setChatArr(() => [...chatArr, obj]);
+    // setChatArr(() => bobj);
+    setChatArr((prev) => [...prev, bobj]);
   };
   const toggleChatState = () => {
     setChatSate(!chatState);

@@ -30,8 +30,8 @@ const DeptProgressChart = () => {
       {
         label: "Positive",
         data: Array.from({ length: 7 }, () => Math.random() * 100),
-        borderColor: "rgba(255, 99, 132, 1)",
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(55, 206, 86, 1)",
+        backgroundColor: "rgba(55, 206, 86, 0.2)",
       },
       {
         label: "Neutral",
@@ -42,8 +42,8 @@ const DeptProgressChart = () => {
       {
         label: "Negative",
         data: Array.from({ length: 7 }, () => Math.random() * 100),
-        borderColor: "rgba(255, 206, 86, 1)",
-        backgroundColor: "rgba(255, 206, 86, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
       },
     ],
   };

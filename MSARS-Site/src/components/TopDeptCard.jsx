@@ -18,7 +18,7 @@ const TopDeptCard = () => {
   ];
   return (
     <div className="top-dept-pane">
-      <span id="top-dept-heading">Under Performing Departments</span>
+      <span id="top-dept-heading">Attention Required Departments</span>
       <span className="top-depts">
         {poorDepts.map((ele) => {
           return (

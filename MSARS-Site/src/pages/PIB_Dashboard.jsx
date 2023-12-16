@@ -36,7 +36,11 @@ const PIB_Dashboard = () => {
               <ProgressCard percentage={36} colour="green" type="Positives" />
             </div>
             <div className="pib-nut-progress">
-              <ProgressCard percentage={51} colour="grey" type="Neutrals" />
+              <ProgressCard
+                percentage={51}
+                colour="rgba(54, 162, 235, 1)"
+                type="Neutrals"
+              />
             </div>
             <div className="pib-neg-progress">
               <ProgressCard percentage={13} colour="red" type="Negatives" />
@@ -63,9 +67,9 @@ const PIB_Dashboard = () => {
                 Department
               </div>
             </div>
-            <div className="pib-search-wrapper">
+            {/* <div className="pib-search-wrapper">
               <SearchBar />
-            </div>
+            </div> */}
             {tab == "news" && (
               <div className="pib-tab-news">
                 <NewsCard />

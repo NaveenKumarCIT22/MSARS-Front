@@ -23,6 +23,17 @@ const DeptModal = () => {
             return navigate("/pib/dashboard");
         }}
       >
+        <div
+          className="back-indicator"
+          style={{
+            transform: "rotate(-90deg)",
+            fontSize: "1.2em",
+            position: "absolute",
+            left: "15px",
+          }}
+        >
+          Back
+        </div>
         <div className="dept-modal" ref={deptModalRef}>
           <div className="dept-modal-header">
             <div className="dept-modal-name">{obj.name}</div>
@@ -31,7 +42,11 @@ const DeptModal = () => {
                 <ProgressCard percentage={36} colour="green" type="Positives" />
               </div>
               <div className="dept-modal-progress">
-                <ProgressCard percentage={51} colour="grey" type="Neutrals" />
+                <ProgressCard
+                  percentage={51}
+                  colour="rgba(54, 162, 235, 1)"
+                  type="Neutrals"
+                />
               </div>
               <div className="dept-modal-progress">
                 <ProgressCard percentage={13} colour="red" type="Negatives" />

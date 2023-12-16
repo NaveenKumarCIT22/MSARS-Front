@@ -76,7 +76,7 @@
 .pib-tab-department {
   width: 90%;
   margin: 0;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   display: flex;
   flex-direction: column;
   gap: 5px;

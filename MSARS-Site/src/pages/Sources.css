@@ -68,7 +68,7 @@
   border-radius: 20px;
   background-color: rgba(25, 54, 54, 0.212);
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   overflow-y: auto;
 }

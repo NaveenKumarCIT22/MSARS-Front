@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .news-modal {
@@ -20,6 +21,7 @@
   align-items: center;
   justify-content: space-between;
   /* z-index: 51; */
+  cursor: auto;
 }
 
 .news-modal-header {

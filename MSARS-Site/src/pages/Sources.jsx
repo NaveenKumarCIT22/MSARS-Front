@@ -1,40 +1,61 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Sources.css";
 import { NavBar } from "../components/NavBar";
+import axios from "axios";
 
 const Sources = () => {
-  const [mode, setMode] = useState("web");
+  const [mode, setMode] = useState("");
   const singleInpRef = useRef();
-  const datalst = [
+  const [datalst, setDatalst] = useState([]);
+
+  let sampled = [
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "2",
     },
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "w123",
     },
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "w123",
     },
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "w123",
     },
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "w123",
     },
     {
       link: "test.news.com/sample_news",
-      uid: "w123",
+      id: "w123",
     },
   ];
-  const deleteRecord = (uid) => {
-    console.log(uid);
+  const deleteRecord = async (id) => {
+    let url = `/api/${mode}/${id}`;
+    let res = await axios.delete(url);
+    console.log(res);
   };
-  const addRecord = (link) => {};
+  const addRecord = async (link) => {
+    let url = `/api/${mode}/`;
+    const rec = {
+      id: Math.floor(Math.random() * 10),
+      link: link,
+    };
+    let res = await axios.post(url, rec);
+    console.log(res);
+  };
+  useEffect(() => {
+    async function getDat() {
+      const dat = await axios.get(`/api/${mode}/`);
+      // console.log(dat.data);
+      setDatalst(() => dat.data);
+    }
+    getDat();
+  }, [mode]);
   return (
     <>
       <NavBar />
@@ -76,7 +97,7 @@ const Sources = () => {
                       <td>
                         <button
                           type="button"
-                          onClick={() => deleteRecord(ele.uid)}
+                          onClick={() => deleteRecord(ele.id)}
                         >
                           Delete
                         </button>
@@ -87,27 +108,33 @@ const Sources = () => {
               </table>
             </div>
             <div className="sources-data-insertion">
-              <div className="data-single-insert">
-                <input
-                  type="url"
-                  name="url-data-input"
-                  id="single-data-input"
-                  ref={singleInpRef}
-                />
-                <input
-                  type="button"
-                  value="Add"
-                  onClick={() => addRecord(singleInpRef.current.value)}
-                />
-              </div>
-              <div className="data-batch-insert">
-                <input
-                  type="file"
-                  name="file-data-input"
-                  id="batch-data-input"
-                />
-                <input type="button" value="Upload" />
-              </div>
+              {mode === "" ? (
+                <div className="data-single-insert">Please Select Mode</div>
+              ) : (
+                <>
+                  <div className="data-single-insert">
+                    <input
+                      type="url"
+                      name="url-data-input"
+                      id="single-data-input"
+                      ref={singleInpRef}
+                    />
+                    <input
+                      type="button"
+                      value="Add"
+                      onClick={() => addRecord(singleInpRef.current.value)}
+                    />
+                  </div>
+                  <div className="data-batch-insert">
+                    <input
+                      type="file"
+                      name="file-data-input"
+                      id="batch-data-input"
+                    />
+                    <input type="button" value="Upload" />
+                  </div>
+                </>
+              )}
             </div>
           </div>
           {/* <div className="sources-type-pie-chat">

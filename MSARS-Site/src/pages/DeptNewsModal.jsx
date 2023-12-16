@@ -26,6 +26,17 @@ const DeptNewsModal = () => {
             return navigate("/dept/detailed");
         }}
       >
+        <div
+          className="back-indicator"
+          style={{
+            transform: "rotate(-90deg)",
+            fontSize: "1.2em",
+            position: "absolute",
+            left: "15px",
+          }}
+        >
+          Back
+        </div>
         <div className="news-modal" ref={newsModalRef}>
           <div className="news-modal-header">
             <div className="news-modal-headline">{obj.headline}</div>
@@ -43,7 +54,7 @@ const DeptNewsModal = () => {
           </div>
           <div className="news-modal-description">{obj.description}</div>
           <div className="news-modal-link">
-            For proof check, refer:{" "}
+            Full Article:{" "}
             <a id="news-modal-link" href={obj.link}>
               {obj.link}
             </a>
