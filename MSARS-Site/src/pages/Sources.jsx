@@ -7,6 +7,7 @@ const Sources = () => {
   const [mode, setMode] = useState("");
   const singleInpRef = useRef();
   const [datalst, setDatalst] = useState([]);
+  const [file, setFile] = useState([]);
 
   let sampled = [
     {
@@ -34,11 +35,13 @@ const Sources = () => {
       id: "w123",
     },
   ];
+
   const deleteRecord = async (id) => {
     let url = `/api/${mode}/${id}`;
     let res = await axios.delete(url);
     console.log(res);
   };
+
   const addRecord = async (link) => {
     let url = `/api/${mode}/`;
     const rec = {
@@ -48,6 +51,7 @@ const Sources = () => {
     let res = await axios.post(url, rec);
     console.log(res);
   };
+
   useEffect(() => {
     async function getDat() {
       const dat = await axios.get(`/api/${mode}/`);
@@ -56,6 +60,23 @@ const Sources = () => {
     }
     getDat();
   }, [mode]);
+
+  const onFileChange = (e) => {
+    setFile(e.target.files[0]);
+    console.log(file);
+  };
+
+  const onFileUpload = async () => {
+    const frmDat = new FormData();
+    frmDat.append("sources_batch", file, file.name);
+    console.log("uploading...", file);
+    await axios.post(`/api/${mode}/batch`, frmDat, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  };
+
   return (
     <>
       <NavBar />
@@ -130,8 +151,13 @@ const Sources = () => {
                       type="file"
                       name="file-data-input"
                       id="batch-data-input"
+                      onChange={onFileChange}
                     />
-                    <input type="button" value="Upload" />
+                    <input
+                      type="button"
+                      value="Upload"
+                      onClick={onFileUpload}
+                    />
                   </div>
                 </>
               )}
