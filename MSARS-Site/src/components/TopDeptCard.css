@@ -23,8 +23,9 @@
 #top-dept-heading {
   font-size: 25px;
   text-decoration: underline;
+  margin-bottom: 15px;
 }
 
 .top-dept {
-  font-size: 22px;
+  font-size: 18px;
 }

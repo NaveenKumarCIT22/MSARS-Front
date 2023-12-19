@@ -8,6 +8,7 @@ import TopDeptCard from "../components/TopDeptCard";
 import ProgressCard from "../components/ProgressCard";
 import { NavBar } from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const PIB_Dashboard = () => {
   const usr = sessionStorage.getItem("MSARS_ActiveUsr");
@@ -23,16 +24,19 @@ const PIB_Dashboard = () => {
   const [tab, setTab] = useState("news");
   const gold = "rgba(0, 255, 255, 0.553)";
   const [percentages, setPercentages] = useState();
+  console.log("before..");
   useEffect(() => {
     const getPer = async () => {
-      let res = await axios.get("/api/tonality");
-      setPercentages(() => res.data[0]);
+      console.log("in...");
+      const res = await axios.get("/api/tonality");
+      console.log("res::", res);
+      setPercentages(res.data[0]);
     };
     getPer();
   }, []);
-  const tabActiveStyle = {
-    backgroundColor: "gold",
-  };
+  // const tabActiveStyle = {
+  //   backgroundColor: "gold",
+  // };
   return (
     <>
       <NavBar />
@@ -41,17 +45,25 @@ const PIB_Dashboard = () => {
         <div className="dash-left">
           <div className="pib-progress-wrapper">
             <div className="pib-pos-progress">
-              <ProgressCard percentage={36} colour="green" type="Positives" />
+              <ProgressCard
+                percentage={percentages?.Positive}
+                colour="green"
+                type="Positives"
+              />
             </div>
             <div className="pib-nut-progress">
               <ProgressCard
-                percentage={51}
+                percentage={percentages?.Neutral}
                 colour="rgba(54, 162, 235, 1)"
                 type="Neutrals"
               />
             </div>
             <div className="pib-neg-progress">
-              <ProgressCard percentage={13} colour="red" type="Negatives" />
+              <ProgressCard
+                percentage={percentages?.Negative}
+                colour="red"
+                type="Negatives"
+              />
             </div>
           </div>
           <div className="pib-tab-group">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ProgressCard.css";
 
 const ProgressCard = ({
-  percentage = 60,
+  percentage = 0,
   colour = "red",
   type = "Positives",
 }) => {
