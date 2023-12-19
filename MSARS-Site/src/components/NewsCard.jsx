@@ -1,8 +1,8 @@
 import "./NewsCard.css";
 import React, { useState } from "react";
-import ShareBtn from "../assets/share-solid.svg";
+// import ShareBtn from "../assets/share-solid.svg";
 import data from "../assets/newsdata.json";
-import NewsModal from "../pages/NewsModal";
+// import NewsModal from "../pages/NewsModal";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 // import { json } from "react-router-dom";
@@ -16,9 +16,9 @@ const NewsCard = () => {
   const [filteredData, setFilteredData] = useState(data);
   return (
     <>
-      <div className="pib-search-wrapper">
+      {/* <div className="pib-search-wrapper">
         <SearchBar />
-      </div>
+      </div> */}
       <div className="pib-tab-inner-wrapper">
         {/* {showModal && <NewsModal obj={newsObj} />} */}
         {filteredData.map((ele) => {
@@ -57,13 +57,13 @@ const NewsCard = () => {
                 <div className={`pib-news-tone ${clr}`}>
                   <span id="pib-news-tone">{tone}</span>
                 </div>
-                <div className="pib-news-share">
+                {/* <div className="pib-news-share">
                   <img
                     className="share-button"
                     src={ShareBtn}
                     alt="Share with peers"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           );

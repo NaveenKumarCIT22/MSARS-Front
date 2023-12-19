@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-between;
   color: rgb(25, 23, 23);
+  cursor: pointer;
 }
 
 .pib-news-card-left {
@@ -39,6 +40,12 @@
 .news-source-link {
   /* text-decoration: solid dashed; */
   color: inherit;
+  cursor: alias;
+  text-decoration: underline dotted;
+}
+
+.news-source-link:hover {
+  text-decoration: underline solid;
 }
 
 .pib-news-title {

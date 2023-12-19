@@ -8,9 +8,9 @@ const DeptCard = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="pib-search-wrapper">
+      {/* <div className="pib-search-wrapper">
         <SearchBar />
-      </div>
+      </div> */}
       <div className="pib-tab-inner-wrapper">
         <div
           className="pib-dept-card"

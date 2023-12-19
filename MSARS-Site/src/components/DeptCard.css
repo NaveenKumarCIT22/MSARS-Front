@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   color: rgb(25, 23, 23);
+  cursor: pointer;
 }
 
 .pib-dept-card-left {
