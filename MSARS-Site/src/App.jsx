@@ -18,8 +18,11 @@ import ProgressChart from "./components/ProgressChart";
 import NewsModal from "./pages/NewsModal";
 import DeptModal from "./pages/DeptModal";
 import DeptNewsModal from "./pages/DeptNewsModal";
+import SearchBar from "./components/SearchBar";
 
-axios.defaults.baseURL = "http://192.168.57.92:8000/";
+// axios.defaults.baseURL = "http://10.0.0.5:8000/";
+axios.defaults.baseURL = "http://10.0.0.123:8000/";
+// axios.defaults.baseURL = "http://192.168.57.92:8000/";
 // axios.defaults.baseURL = "http://192.168.191.92:8000/";
 // axios.defaults.baseURL = "http://mfkinhost:6969/";
 axios.defaults.headers = {
@@ -41,6 +44,7 @@ function App() {
         <Route path="/deptcardtest" element={<DeptCard />} />
         <Route path="/pib/sources" element={<Sources />} />
         <Route path="/linecharttest" element={<ProgressChart />} />
+        <Route path="/searchtest" element={<SearchBar />} />
         <Route path="/pib/news/detailed" element={<NewsModal />} />
         <Route path="/dept/news/detailed" element={<DeptNewsModal />} />
         <Route path="/dept/detailed" element={<DeptModal />} />

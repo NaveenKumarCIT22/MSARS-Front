@@ -10,6 +10,7 @@ import {
   Title,
   Legend,
 } from "chart.js";
+import axios from "axios";
 
 ChartJS.register(
   LineElement,
@@ -24,6 +25,45 @@ ChartJS.register(
 
 // LineChart component
 const ProgressChart = () => {
+  // const frm_date = "2023-12-13";
+  // const to_date = "2023-12-19";
+  // const res = await axios.get(
+  //   `/api/tonality?from_date=${frm_date}&to_date=${to_date}`
+  // );
+  // console.log(res);
+  // const tdata = res.data;
+  // let posarr = [];
+  // let nutarr = [];
+  // let negarr = [];
+  // tdata.forEach((dat) => {
+  //   posarr.push(dat.Positive);
+  //   nutarr.push(dat.Neutral);
+  //   negarr.push(dat.Negative);
+  // });
+  // console.log(posarr, nutarr, negarr);
+  // const data = {
+  //   labels: Array.from({ length: tdata.length }, (_, i) => `Day ${i + 1}`),
+  //   datasets: [
+  //     {
+  //       label: "Positive",
+  //       data: posarr,
+  //       borderColor: "rgba(55, 206, 86, 1)",
+  //       backgroundColor: "rgba(55, 206, 86, 0.2)",
+  //     },
+  //     {
+  //       label: "Neutral",
+  //       data: nutarr,
+  //       borderColor: "rgba(54, 162, 235, 1)",
+  //       backgroundColor: "rgba(54, 162, 235, 0.2)",
+  //     },
+  //     {
+  //       label: "Negative",
+  //       data: negarr,
+  //       borderColor: "rgba(255, 99, 132, 1)",
+  //       backgroundColor: "rgba(255, 99, 132, 0.2)",
+  //     },
+  //   ],
+  // };
   const data = {
     labels: Array.from({ length: 7 }, (_, i) => `Day ${i + 1}`),
     datasets: [
