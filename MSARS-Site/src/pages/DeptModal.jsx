@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./DeptModal.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProgressCard from "../components/ProgressCard";
 import DeptNewsCard from "../components/DeptNewsCard";
 import DeptProgressChart from "../components/DeptProgressChart";
+import axios from "axios";
 
 const dobj = {
   name: "Ministry of Education",
@@ -12,8 +13,15 @@ const dobj = {
 const DeptModal = () => {
   const navigate = useNavigate();
   const deptModalRef = useRef();
-  //   const obj = JSON.parse(sessionStorage.getItem("deptObj"));
-  const obj = dobj;
+  // const params = useParams();
+  // let dobj = {};
+  // useEffect(() => {
+  //   const getNews = async () => {
+  //     let res = axios.get("api/department-cards");
+  //   };
+  // }, []);
+  const obj = JSON.parse(sessionStorage.getItem("deptObj"));
+  // const obj = dobj;
   return (
     <>
       <div
@@ -39,17 +47,25 @@ const DeptModal = () => {
             <div className="dept-modal-name">{obj.name}</div>
             <div className="dept-modal-details">
               <div className="dept-modal-progress">
-                <ProgressCard percentage={36} colour="green" type="Positives" />
+                <ProgressCard
+                  percentage={obj.Positive}
+                  colour="green"
+                  type="Positives"
+                />
               </div>
               <div className="dept-modal-progress">
                 <ProgressCard
-                  percentage={51}
+                  percentage={obj.Neutral}
                   colour="rgba(54, 162, 235, 1)"
                   type="Neutrals"
                 />
               </div>
               <div className="dept-modal-progress">
-                <ProgressCard percentage={13} colour="red" type="Negatives" />
+                <ProgressCard
+                  percentage={obj.Negative}
+                  colour="red"
+                  type="Negatives"
+                />
               </div>
               <div className="dept-modal-rank">
                 #<span id="dept-modal-rank">{obj.rank}</span>

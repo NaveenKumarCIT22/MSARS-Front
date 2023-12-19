@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./DeptCard.css";
 
 import React, { useEffect, useState } from "react";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 import axios from "axios";
 
 const DeptCard = () => {
@@ -27,7 +27,9 @@ const DeptCard = () => {
             <div
               className="pib-dept-card"
               onClick={() => {
+                sessionStorage.setItem("deptObj", JSON.stringify(ele));
                 navigate("/dept/detailed");
+                // navigate("/dept/" + ele.id);
               }}
             >
               <div className="pib-dept-card-left">
@@ -44,19 +46,26 @@ const DeptCard = () => {
               <div className="pib-dept-card-right">
                 <div className="pib-dept-pos pos-elem">
                   <div className="pib-dept-pos-num">
-                    <span id="pib-dept-pos-num">{ele.Positive}</span>%
+                    <span id="pib-dept-pos-num">
+                      {Math.floor(ele.Positive)}
+                    </span>
+                    %
                   </div>
                   <div className="pib-dept-caption">+ ve</div>
                 </div>
                 <div className="pib-dept-nut nut-elem">
                   <div className="pib-dept-nut-num">
-                    <span id="pib-dept-nut-num">{ele.Neutral}</span>%
+                    <span id="pib-dept-nut-num">{Math.floor(ele.Neutral)}</span>
+                    %
                   </div>
                   <div className="pib-dept-caption">N</div>
                 </div>
                 <div className="pib-dept-neg neg-elem">
                   <div className="pib-dept-neg-num">
-                    <span id="pib-dept-neg-num">{ele.Negative}</span>%
+                    <span id="pib-dept-neg-num">
+                      {Math.floor(ele.Negative)}
+                    </span>
+                    %
                   </div>
                   <div className="pib-dept-caption">- ve</div>
                 </div>

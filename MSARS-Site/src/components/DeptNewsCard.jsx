@@ -6,7 +6,7 @@ import data from "../assets/newsdata.json";
 import { useNavigate } from "react-router-dom";
 // import { json } from "react-router-dom";
 
-const DeptNewsCard = () => {
+const DeptNewsCard = (uid) => {
   const navigate = useNavigate();
   // const a = JSON.parse();
   // console.log(data);

@@ -39,6 +39,7 @@ const Sources = () => {
   const deleteRecord = async (id) => {
     let url = `/api/${mode}/${id}`;
     let res = await axios.delete(url);
+    setDatalst((prev) => prev.filter((ele) => ele.id !== id));
     console.log(res);
   };
 
@@ -49,6 +50,8 @@ const Sources = () => {
       link: link,
     };
     let res = await axios.post(url, rec);
+    setDatalst((prev) => [...prev, rec]);
+
     console.log(res);
   };
 

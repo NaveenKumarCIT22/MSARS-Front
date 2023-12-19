@@ -45,7 +45,8 @@ function App() {
         <Route path="/pib/sources" element={<Sources />} />
         <Route path="/linecharttest" element={<ProgressChart />} />
         <Route path="/searchtest" element={<SearchBar />} />
-        <Route path="/pib/news/detailed" element={<NewsModal />} />
+        {/* <Route path="/pib/news/:id" element={<NewsModal />} /> */}
+        <Route path="/pib/news/:id" element={<NewsModal />} />
         <Route path="/dept/news/detailed" element={<DeptNewsModal />} />
         <Route path="/dept/detailed" element={<DeptModal />} />
 

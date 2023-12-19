@@ -22,6 +22,14 @@ const PIB_Dashboard = () => {
   // }, []);
   const [tab, setTab] = useState("news");
   const gold = "rgba(0, 255, 255, 0.553)";
+  const [percentages, setPercentages] = useState();
+  useEffect(() => {
+    const getPer = async () => {
+      let res = await axios.get("/api/tonality");
+      setPercentages(() => res.data[0]);
+    };
+    getPer();
+  }, []);
   const tabActiveStyle = {
     backgroundColor: "gold",
   };
