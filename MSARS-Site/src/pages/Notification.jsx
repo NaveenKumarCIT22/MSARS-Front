@@ -6,15 +6,15 @@ const Notification = () => {
   //   const navigate = useNavigate();
   const notifModalRef = useRef();
   const obj = [
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
-    { date: "16/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "20/12/2023", msg: "Highlights" },
+    { date: "19/12/2023", msg: "Highlights" },
+    { date: "19/12/2023", msg: "Highlights" },
+    { date: "19/12/2023", msg: "Highlights" },
   ];
   return (
     <>

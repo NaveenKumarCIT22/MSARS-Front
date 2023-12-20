@@ -70,14 +70,28 @@ const Sources = () => {
   };
 
   const onFileUpload = async () => {
-    const frmDat = new FormData();
-    frmDat.append("sources_batch", file, file.name);
-    console.log("uploading...", file);
-    await axios.post(`/api/${mode}/batch`, frmDat, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+    // const frmDat = new FormData();
+    // frmDat.append("sources_batch", file, file.name);
+    // console.log("uploading...", file);
+    // await axios.post(`/api/csvupload`, frmDat, {
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //     "Content-Disposition": `attachment;filename=${file.name}`,
+    //   },
+    // });
+    const filename = file.name;
+    const res = await axios.post("", {
+      data: filename,
     });
+    console.log(res.status);
+    window.alert("File sent for processing...");
+  };
+
+  const handleAnalyse = async () => {
+    // if (mode == "web") {
+    const res = await axios.get("/api/test?mode=" + mode);
+    console.log("res:", res.status);
+    // }
   };
 
   return (
@@ -161,6 +175,11 @@ const Sources = () => {
                       value="Upload"
                       onClick={onFileUpload}
                     />
+                  </div>
+                  <div className="analyser-button">
+                    <button type="button" onClick={handleAnalyse}>
+                      Analyse
+                    </button>
                   </div>
                 </>
               )}
