@@ -1,13 +1,14 @@
 import React, { useRef, useState } from "react";
 import "./Actions.css";
 import { NavBar } from "../components/NavBar";
+import axios from "axios";
 
 const Actions = () => {
   const textareaRef = useRef();
   let feedback = {};
   const [tone, setTone] = useState();
   const obj = JSON.parse(sessionStorage.getItem("feedbackNews"));
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     let reason = textareaRef.current.value;
     feedback = {
       id: obj.id,
@@ -15,6 +16,8 @@ const Actions = () => {
     };
     console.log("Reason:", reason);
     console.log(feedback);
+    await axios.post("/api/edit", feedback);
+    window.alert("Tonality updated successfully...");
   };
   return (
     <>
@@ -48,7 +51,7 @@ const Actions = () => {
                   type="radio"
                   name="tone"
                   id="pos-radio"
-                  onClick={() => setTone(() => "positive")}
+                  onClick={() => setTone(() => "Positive")}
                 />
                 <label htmlFor="pos-radio">Positive</label>
               </>
@@ -57,7 +60,7 @@ const Actions = () => {
                   type="radio"
                   name="tone"
                   id="neg-radio"
-                  onClick={() => setTone(() => "negative")}
+                  onClick={() => setTone(() => "Negative")}
                 />
                 <label htmlFor="neg-radio">Negative</label>
               </>

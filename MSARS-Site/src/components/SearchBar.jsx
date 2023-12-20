@@ -7,7 +7,7 @@ import "./SearchBar.css";
 import { Stack } from "@mui/material";
 import axios from "axios";
 
-const SearchBar = () => {
+const SearchBar = ({ changeFilter }) => {
   // const pibSearchBarRef = useRef(null);
   const [deptlst, setDeptLst] = useState([]);
   const [srclst, setSrcLst] = useState([]);
@@ -70,7 +70,7 @@ const SearchBar = () => {
   //   });
   // });
 
-  console.log(filterList);
+  // console.log(filterList);
   const [vallst, setVallst] = useState([]);
   return (
     <>
@@ -109,7 +109,7 @@ const SearchBar = () => {
             )}
           />
         </Stack>
-        <button type="button" onClick={console.log(vallst)}>
+        <button type="button" onClick={() => changeFilter(() => vallst)}>
           Search
         </button>
       </div>
