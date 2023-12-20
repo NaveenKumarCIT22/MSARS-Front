@@ -1,0 +1,36 @@
+.verify-card {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.3em;
+}
+
+.news-inp {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.news-inp > input {
+  width: 80%;
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+.news-descr {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+
+.tonality-label,
+.department-label {
+  text-align: start;
+}

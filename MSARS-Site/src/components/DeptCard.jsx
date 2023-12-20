@@ -28,7 +28,7 @@ const DeptCard = () => {
               className="pib-dept-card"
               onClick={() => {
                 sessionStorage.setItem("deptObj", JSON.stringify(ele));
-                navigate("/dept/detailed");
+                navigate("/dept/detailed/");
                 // navigate("/dept/" + ele.id);
               }}
             >

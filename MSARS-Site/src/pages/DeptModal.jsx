@@ -48,21 +48,21 @@ const DeptModal = () => {
             <div className="dept-modal-details">
               <div className="dept-modal-progress">
                 <ProgressCard
-                  percentage={obj.Positive}
+                  percentage={Math.floor(obj.Positive)}
                   colour="green"
                   type="Positives"
                 />
               </div>
               <div className="dept-modal-progress">
                 <ProgressCard
-                  percentage={obj.Neutral}
+                  percentage={Math.floor(obj.Neutral)}
                   colour="rgba(54, 162, 235, 1)"
                   type="Neutrals"
                 />
               </div>
               <div className="dept-modal-progress">
                 <ProgressCard
-                  percentage={obj.Negative}
+                  percentage={Math.floor(obj.Negative)}
                   colour="red"
                   type="Negatives"
                 />

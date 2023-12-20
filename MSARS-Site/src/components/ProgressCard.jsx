@@ -6,6 +6,8 @@ const ProgressCard = ({
   colour = "red",
   type = "Positives",
 }) => {
+  percentage = Math.floor(percentage);
+  console.log(percentage);
   let circleWidth = 150;
   //   let percentage = 60;
   //   let colour = "red";
@@ -51,7 +53,7 @@ const ProgressCard = ({
               style={{ fill: colour }}
               //   color={colour}
             >
-              {percentage}%
+              {Math.floor(percentage)}%
             </text>
           </svg>
         </div>

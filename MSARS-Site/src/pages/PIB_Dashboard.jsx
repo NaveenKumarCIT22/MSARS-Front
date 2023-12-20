@@ -9,6 +9,7 @@ import ProgressCard from "../components/ProgressCard";
 import { NavBar } from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import VerifyCard from "../components/VerifyCard";
 
 const PIB_Dashboard = () => {
   const usr = sessionStorage.getItem("MSARS_ActiveUsr");
@@ -86,6 +87,15 @@ const PIB_Dashboard = () => {
               >
                 Department
               </div>
+              <div
+                className="pib-tab-selector"
+                onClick={() => setTab("verify")}
+                style={{
+                  backgroundColor: tab === "verify" ? gold : "",
+                }}
+              >
+                Verification
+              </div>
             </div>
             {/* <div className="pib-search-wrapper">
               <SearchBar />
@@ -98,6 +108,11 @@ const PIB_Dashboard = () => {
             {tab == "dept" && (
               <div className="pib-tab-department">
                 <DeptCard />
+              </div>
+            )}
+            {tab == "verify" && (
+              <div className="pib-tab-department">
+                <VerifyCard />
               </div>
             )}
           </div>

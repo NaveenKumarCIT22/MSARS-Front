@@ -66,7 +66,7 @@ const NewsModal = () => {
           <div className="news-modal-description">{obj?.content}</div>
           <div className="news-modal-link">
             Full Article:{" "}
-            <a id="news-modal-link" href={obj?.source_link}>
+            <a id="news-modal-link" target="_blank" href={obj?.source_link}>
               {obj?.source_link}
             </a>
           </div>

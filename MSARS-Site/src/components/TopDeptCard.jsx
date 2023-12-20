@@ -21,10 +21,12 @@ const TopDeptCard = () => {
   useEffect(() => {
     const getPoor = async () => {
       let res = await axios.get("/api/department-cards");
-      setPoorDepts(() => res.data.reverse().slice(0, 3));
+      let revRank = res.data.reverse();
+      setPoorDepts(() => revRank.slice(0, 3));
     };
     getPoor();
   }, []);
+
   return (
     <div className="top-dept-pane">
       <span id="top-dept-heading">Attention Required Departments</span>

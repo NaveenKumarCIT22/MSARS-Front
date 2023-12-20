@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // import data from "../assets/newsdata.json";
 // import NewsModal from "../pages/NewsModal";
 import { useNavigate } from "react-router-dom";
-// import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar";
 import axios from "axios";
 // import { json } from "react-router-dom";
 
@@ -23,6 +23,7 @@ const NewsCard = () => {
     };
     datExtract();
   }, []);
+  // sessionStorage.setItem("newsDat", JSON.stringify(filteredData));
 
   return (
     <>
@@ -57,7 +58,11 @@ const NewsCard = () => {
                   <span id="pib-news-title">{ele.headlines}</span>
                 </div>
                 <div className="pib-news-dept">
-                  <a href={ele.source_link} className="news-source-link">
+                  <a
+                    href={ele.source_link}
+                    target="_blank"
+                    className="news-source-link"
+                  >
                     <span id="pib-news-source">{ele.source_name}</span>
                   </a>
                   {" - "}
