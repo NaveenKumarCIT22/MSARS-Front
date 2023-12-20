@@ -130,6 +130,9 @@ export function NavBar() {
                 <NavLink className="nav-link" to="/pib/sources">
                   Sources
                 </NavLink>
+                <NavLink className="nav-link" to="/actions">
+                  Actions
+                </NavLink>
                 <NavLink className="nav-link" to="/login">
                   {usr}
                 </NavLink>
@@ -145,6 +148,9 @@ export function NavBar() {
                   </NavLink>
                   <NavLink className="nav-link" to="/pib/sources">
                     Sources
+                  </NavLink>
+                  <NavLink className="nav-link" to="/actions">
+                    Actions
                   </NavLink>
                   <NavLink className="nav-link" to="/login">
                     {usr}

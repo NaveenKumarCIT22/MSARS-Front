@@ -18,6 +18,11 @@ const TopDeptCard = () => {
   //   },
   // ];
   const [poorDepts, setPoorDepts] = useState();
+  let cnt = 0;
+  const counter = () => {
+    cnt += 1;
+    return cnt;
+  };
   useEffect(() => {
     const getPoor = async () => {
       let res = await axios.get("/api/department-cards");
@@ -38,7 +43,8 @@ const TopDeptCard = () => {
                 <span className="golden-rank">
                   {"#-"}
                   <span id="span" className="top-dept-rank">
-                    {ele.rank}
+                    {/* {ele.rank} */}
+                    {counter()}
                   </span>
                 </span>{" "}
                 <span className="deptartment-name">{ele.name}</span>

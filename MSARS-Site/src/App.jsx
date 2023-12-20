@@ -19,6 +19,8 @@ import NewsModal from "./pages/NewsModal";
 import DeptModal from "./pages/DeptModal";
 import DeptNewsModal from "./pages/DeptNewsModal";
 import SearchBar from "./components/SearchBar";
+import EditWidget from "./components/EditWidget";
+import Actions from "./pages/Actions";
 
 // axios.defaults.baseURL = "http://10.0.0.5:8000/";
 axios.defaults.baseURL = "http://10.0.0.123:8000/";
@@ -44,11 +46,13 @@ function App() {
         <Route path="/deptcardtest" element={<DeptCard />} />
         <Route path="/pib/sources" element={<Sources />} />
         <Route path="/linecharttest" element={<ProgressChart />} />
+        <Route path="/edittest" element={<EditWidget />} />
         <Route path="/searchtest" element={<SearchBar />} />
         {/* <Route path="/pib/news/:id" element={<NewsModal />} /> */}
         <Route path="/pib/news/:id" element={<NewsModal />} />
-        <Route path="/dept/news/detailed" element={<DeptNewsModal />} />
+        <Route path="/dept/news/:id" element={<DeptNewsModal />} />
         <Route path="/dept/detailed" element={<DeptModal />} />
+        <Route path="/actions" element={<Actions />} />
 
         <Route
           path="/progresstest"

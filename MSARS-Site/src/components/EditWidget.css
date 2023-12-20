@@ -1,0 +1,40 @@
+.edit-widget-container {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(25, 54, 54, 0.212);
+  cursor: pointer;
+}
+
+.edit-widget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* fill: rgb(255, 172, 127); */
+  /* color: rgb(161, 179, 192); */
+}
+
+.edit-panel-wrapper {
+  z-index: 65;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(25, 54, 54, 0.662);
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.edit-panel {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./NewsModal.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import EditWidget from "../components/EditWidget";
 
 // const dobj = {
 //   headline: "PM suffered a serious heart-attack | Nation griefs",
@@ -60,6 +61,9 @@ const NewsModal = () => {
               </div>
               <div className="news-modal-tone">
                 Tone: <span id="news-modal-tone">{obj?.tonality}</span>
+              </div>
+              <div className="news-modal-tone">
+                <EditWidget nws={obj} />
               </div>
             </div>
           </div>
